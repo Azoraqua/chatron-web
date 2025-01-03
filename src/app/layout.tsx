@@ -1,21 +1,23 @@
 import type { Metadata } from 'next';
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Chatron'
 };
 
-const RootLayout: FCC = ({ children }) => (
-  <html lang="en">
+const RootLayout: FCC = async ({ children }) => {
+  return (
+    <html lang="en">
     <body className={`antialiased`}>
-      {children}
+    {children}
 
-      <Analytics />
-      <SpeedInsights />
+    <Analytics />
+    <SpeedInsights />
     </body>
-  </html>
-);
+    </html>
+  );
+};
 
 export default RootLayout;

@@ -7,11 +7,16 @@ import { useRouter } from 'next/navigation';
 
 export default function Home() {
   const { auth } = useSupabase();
-  const session = use(auth.getSession());
   const router = useRouter();
 
-  if (!session || session.error || !session.data.session || !session.data.session.user) {
-    router.replace('/login');
+  if (typeof auth === 'undefined' || typeof router === 'undefined' || typeof window === 'undefined') {
+    return null
+  }
+
+  const session = use(auth.getSession());
+
+  if (!session || session.error || !session.data.session || !session.data.session.user ) {
+    router?.replace('/login');
     return null;
   }
 
