@@ -17,5 +17,6 @@ COPY . .
 # Expose port (if needed)
 EXPOSE 3000
 
-# Start the app (replace with your app's start command)
+RUN pnpm run build
+
 CMD ["pnpm", "run", "start"]
