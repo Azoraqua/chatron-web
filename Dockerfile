@@ -7,10 +7,13 @@ RUN npm install -g pnpm
 WORKDIR /app
 
 # Copy the project files
-COPY . .
+ADD package.json package.json
+ADD pnpm-lock.yaml pnpm-lock.yaml
 
 # Install dependencies using pnpm
 RUN pnpm install
+
+COPY . .
 
 # Expose port (if needed)
 EXPOSE 3000
