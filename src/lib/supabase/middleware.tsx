@@ -3,7 +3,10 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export async function middleware(req: NextRequest, res: NextResponse) {
   // Create an instance of Supabase client using cookies for session handling
-  const supabase = createMiddlewareClient({ req, res }, { supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL, supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_KEY });
+  const supabase = createMiddlewareClient({ req, res }, {
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    supabaseKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+  });
 
   // Retrieve the session
   let session;
