@@ -8,7 +8,6 @@ WORKDIR /app
 
 # Copy the project files
 ADD package.json package.json
-ADD pnpm-lock.yaml pnpm-lock.yaml
 
 # Install dependencies using pnpm
 RUN pnpm install
