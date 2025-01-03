@@ -1,7 +1,16 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+@tailwind screens;
 
-/*noinspection CssInvalidAtRule*/
-@theme {
-    --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-    --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: .8px;
+    word-spacing: .4px;
 }
